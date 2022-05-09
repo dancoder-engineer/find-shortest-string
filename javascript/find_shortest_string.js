@@ -1,5 +1,13 @@
 function findShortestString(arr) {
-  // type your code here
+  findArr = [arr[0], arr[0].length]
+  for (n = 1; n < arr.length; n++) {
+    if (arr[n].length < findArr[1]) {
+      findArr[0] = arr[n]
+      findArr[1] = arr[n].length
+    }
+  }
+  return findArr[0]
+
 }
 
 if (require.main === module) {
