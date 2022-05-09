@@ -25,7 +25,16 @@ if (require.main === module) {
   console.log("Expecting: 'lily'");
   console.log("=>", findShortestString(['flower', 'juniper', 'lily', 'dadelion']));
 
-  // BENCHMARK HERE
+  
+  const startTime = Date.now();
+
+  for (let i = 0; i < 1000; i++) {
+    findShortestString(['flower', 'juniper', 'lily', 'dadelion']);
+  }
+
+  const avgTime = (Date.now() - startTime) / 2000;
+
+  console.log(avgTime);
 }
 
 module.exports = findShortestString;
